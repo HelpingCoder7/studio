@@ -42,7 +42,14 @@ const projects = [
   },
 ];
 
+const STICKY_CARD_OFFSET = 3; // in rem
+
 export function Projects() {
+  // Calculate the total height required for the sticky scrolling container on mobile
+  const mobileContainerHeight = `calc(${
+    (projects.length) * STICKY_CARD_OFFSET
+  }rem + 40rem)`; // 40rem is an estimate for the last card's height + some padding
+
   return (
     <div className="bg-muted/50">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
@@ -57,12 +64,12 @@ export function Projects() {
 
         {/* Mobile view with overlapping cards */}
         <div className="mt-12 grid gap-6 md:hidden">
-          <div className="relative pb-[500px]" style={{ height: `calc(${projects.length - 1} * 3rem)` }}>
+          <div className="relative" style={{ height: mobileContainerHeight }}>
             {projects.map((project, index) => (
               <div
                 key={project.title}
                 className="sticky w-full"
-                style={{ top: `calc(6rem + ${index * 3}rem)` }}
+                style={{ top: `calc(8rem + ${index * STICKY_CARD_OFFSET}rem)` }}
               >
                 <Card className="overflow-hidden bg-card/60 backdrop-blur-lg border-border shadow-lg">
                   {project.image && (
