@@ -17,6 +17,11 @@ export function Hero() {
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
+    // Reset on mount
+    setTypedName('');
+  }, []);
+
+  useEffect(() => {
     if (typedName.length < fullName.length) {
       const timeoutId = setTimeout(() => {
         setTypedName(fullName.slice(0, typedName.length + 1));
@@ -45,9 +50,9 @@ export function Hero() {
           </Avatar>
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl min-h-[84px] md:min-h-[100px] lg:min-h-[128px]">
             {typedName}
-            <span className={cn("border-l-4 border-primary ml-1", showCursor ? "animate-pulse" : "opacity-0")}></span>
+            <span className={cn("border-l-4 border-primary ml-1", showCursor ? "animate-pulse" : "opacity-0", typedName.length < fullName.length ? "" : "inline-block")}></span>
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-foreground/60 md:text-xl">
+          <p className="mt-4 max-w-2xl text-lg text-foreground/80 md:text-xl">
             I&apos;m an <span className="font-semibold text-primary">Application Developer</span> crafting seamless and innovative digital experiences.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">

@@ -52,7 +52,7 @@ export default function RootLayout({
         )}
       >
         <div 
-          className="flex min-h-screen flex-col bg-background/80 backdrop-blur-sm scroll-gradient"
+          className="flex min-h-screen flex-col scroll-gradient"
           style={{ backgroundPosition: `50% ${scrollPosition}%` }}
         >
           {children}
