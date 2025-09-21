@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased animated-gradient',
+          'min-h-screen bg-background font-sans antialiased',
           inter.variable,
           spaceGrotesk.variable
         )}

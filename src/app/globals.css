@@ -10,13 +10,13 @@
     --card-foreground: 210 10% 23%;
     --popover: 210 25% 94%;
     --popover-foreground: 210 10% 23%;
-    --primary: 210 31% 51%;
+    --primary: 220 80% 60%;
     --primary-foreground: 210 25% 98%;
     --secondary: 210 25% 90%;
     --secondary-foreground: 210 31% 51%;
     --muted: 210 25% 90%;
     --muted-foreground: 210 10% 45%;
-    --accent: 315 50% 64%;
+    --accent: 330 80% 60%;
     --accent-foreground: 315 50% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -38,13 +38,13 @@
     --card-foreground: 210 40% 98%;
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 31% 65%;
+    --primary: 220 80% 70%;
     --primary-foreground: 222 47% 11%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 315 50% 70%;
+    --accent: 330 80% 70%;
     --accent-foreground: 222 47% 11%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
@@ -65,26 +65,17 @@
   }
   body {
     @apply text-foreground;
+    background: linear-gradient(-45deg, hsl(var(--background)), hsl(var(--secondary)), hsl(var(--primary)), hsl(var(--accent)));
+    background-size: 100% 400%;
+    background-attachment: fixed;
   }
   html {
     scroll-behavior: smooth;
   }
 }
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animated-gradient {
-  background: linear-gradient(-45deg, hsl(var(--background)), hsl(var(--secondary)), hsl(var(--primary)), hsl(var(--accent)));
-  background-size: 400% 400%;
-  animation: gradient-animation 15s ease infinite;
+.scroll-gradient {
+  background: linear-gradient(180deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.2), hsl(var(--background)), hsl(var(--secondary)));
+  background-size: 100% 300%;
+  transition: background-position 0.1s ease-out;
 }
