@@ -57,14 +57,14 @@ export function Projects() {
 
         {/* Mobile view with overlapping cards */}
         <div className="mt-12 grid gap-6 md:hidden">
-          <div className="relative h-[calc(4*12rem+250px)]">
+          <div className="relative pb-[500px]" style={{ height: `calc(${projects.length - 1} * 3rem)` }}>
             {projects.map((project, index) => (
               <div
                 key={project.title}
                 className="sticky w-full"
                 style={{ top: `calc(6rem + ${index * 3}rem)` }}
               >
-                <Card className="overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg">
+                <Card className="overflow-hidden bg-card/60 backdrop-blur-lg border-border shadow-lg">
                   {project.image && (
                     <div className="aspect-video overflow-hidden">
                       <Image
@@ -115,7 +115,7 @@ export function Projects() {
         {/* Desktop view */}
         <div className="mt-12 hidden md:grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
           {projects.map((project) => (
-            <Card key={project.title} className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg">
+            <Card key={project.title} className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card/60 backdrop-blur-lg border-border shadow-lg">
               {project.image && (
                 <div className="aspect-video overflow-hidden">
                   <Image
