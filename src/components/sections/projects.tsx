@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const projects = [
   {
@@ -47,15 +46,15 @@ export function Projects() {
     <div className="bg-muted/50">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex flex-col items-center text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
             Featured Projects
           </h2>
-          <p className="mt-4 max-w-2xl text-foreground/80 md:text-lg">
+          <p className="mt-4 max-w-2xl text-base text-foreground/80 md:text-lg">
             Here are some of the projects I&apos;m proud of.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2">
           {projects.map((project) => (
             <div key={project.title} className="gradient-border">
               <Card className="group h-full overflow-hidden transition-all duration-300 bg-card/30 backdrop-blur-lg border-transparent">
@@ -82,19 +81,19 @@ export function Projects() {
                 <CardContent>
                   <p className="text-sm text-foreground/80">{project.description}</p>
                 </CardContent>
-                <CardFooter className="gap-2">
+                <CardFooter className="flex-col sm:flex-row gap-3">
                   {project.github && (
-                    <Button asChild variant="outline" className="flex-1">
+                    <Button asChild variant="outline" className="w-full sm:w-auto flex-1">
                       <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-6 w-6 text-accent" />
+                        <Github className="mr-2 h-7 w-7 text-accent" />
                         GitHub
                       </Link>
                     </Button>
                   )}
                   {project.live && (
-                    <Button asChild className="flex-1">
+                    <Button asChild className="w-full sm:w-auto flex-1">
                       <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-6 w-6 text-accent" />
+                        <ExternalLink className="mr-2 h-7 w-7 text-accent" />
                         Live Demo
                       </Link>
                     </Button>

@@ -14,7 +14,7 @@ import { Mail, Phone } from "lucide-react";
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending}>
+    <Button type="submit" disabled={pending} className="w-full sm:w-auto">
       {pending ? "Sending..." : "Service under development"}
     </Button>
   );
@@ -38,16 +38,16 @@ export function Contact() {
   
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6">
-      <div className="flex flex-col items-center text-center mb-12">
-        <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
+      <div className="flex flex-col items-center text-center mb-10">
+        <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
           Get In Touch
         </h2>
-        <p className="mt-4 max-w-2xl text-foreground/80 md:text-lg">
+        <p className="mt-4 max-w-2xl text-base text-foreground/80 md:text-lg">
           Have a question or want to work together? Feel free to reach out.
         </p>
       </div>
 
-      <div className="grid gap-12 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Contact Information</CardTitle>
@@ -55,15 +55,15 @@ export function Contact() {
               Here's how you can reach me directly.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center gap-4">
-              <Mail className="h-6 w-6 text-accent" />
-              <a href="mailto:sudarshanshrivastava7@gmail.com" className="hover:underline">
+          <CardContent className="space-y-4 text-sm">
+            <div className="flex items-center gap-3">
+              <Mail className="h-7 w-7 text-accent" />
+              <a href="mailto:sudarshanshrivastava7@gmail.com" className="hover:underline break-all">
                 sudarshanshrivastava7@gmail.com
               </a>
             </div>
-            <div className="flex items-center gap-4">
-              <Phone className="h-6 w-6 text-accent" />
+            <div className="flex items-center gap-3">
+              <Phone className="h-7 w-7 text-accent" />
               <a href="tel:9827763713" className="hover:underline">
                 +91 9827763713
               </a>
@@ -89,7 +89,7 @@ export function Contact() {
                 {state?.errors?.email && <p className="text-sm text-destructive">{state.errors.email}</p>}
               </div>
               <div className="space-y-1">
-                <Textarea id="message" name="message" placeholder="Your Message" rows={5} />
+                <Textarea id="message" name="message" placeholder="Your Message" rows={4} />
                  {state?.errors?.message && <p className="text-sm text-destructive">{state.errors.message}</p>}
               </div>
               <SubmitButton />
