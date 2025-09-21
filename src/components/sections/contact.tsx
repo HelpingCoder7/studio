@@ -16,7 +16,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
   return (
     <Button type="submit" disabled={pending}>
-      {pending ? "Sending..." : "Send Message"}
+      {pending ? "Sending..." : "Service under development"}
     </Button>
   );
 }
