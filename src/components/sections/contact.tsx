@@ -1,10 +1,7 @@
 "use client";
 
-import { useFormState,useFormStatus } from "react-dom";
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import React, { useActionState, useEffect } from "react";
+import { useFormStatus } from "react-dom";
 
 import { submitContactForm } from "@/app/actions";
 import { useToast } from "@/hooks/use-toast";
@@ -13,12 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, Phone } from "lucide-react";
-
-const contactSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-});
+import React from "react";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -30,22 +22,20 @@ function SubmitButton() {
 }
 
 export function Contact() {
-  const [state, formAction] = useFormState(submitContactForm, null);
+  const [state, formAction] = useActionState(submitContactForm, null);
   const { toast } = useToast();
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({
-    resolver: zodResolver(contactSchema),
-  });
+  const formRef = React.useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     if (state?.message) {
-      if(state.errors) {
+      if (state.errors) {
         toast({ title: "Error", description: state.message, variant: "destructive" });
       } else {
         toast({ title: "Success!", description: state.message });
-        reset();
+        formRef.current?.reset();
       }
     }
-  }, [state, toast, reset]);
+  }, [state, toast]);
   
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6">
@@ -90,20 +80,17 @@ export function Contact() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form action={formAction} className="space-y-4">
+            <form ref={formRef} action={formAction} className="space-y-4">
               <div className="space-y-1">
-                <Input id="name" name="name" placeholder="Your Name" {...register("name")} />
-                {errors.name && <p className="text-sm text-destructive">{errors.name.message as string}</p>}
+                <Input id="name" name="name" placeholder="Your Name" />
                 {state?.errors?.name && <p className="text-sm text-destructive">{state.errors.name}</p>}
               </div>
               <div className="space-y-1">
-                <Input id="email" name="email" type="email" placeholder="Your Email" {...register("email")} />
-                {errors.email && <p className="text-sm text-destructive">{errors.email.message as string}</p>}
+                <Input id="email" name="email" type="email" placeholder="Your Email" />
                 {state?.errors?.email && <p className="text-sm text-destructive">{state.errors.email}</p>}
               </div>
               <div className="space-y-1">
-                <Textarea id="message" name="message" placeholder="Your Message" rows={5} {...register("message")} />
-                {errors.message && <p className="text-sm text-destructive">{errors.message.message as string}</p>}
+                <Textarea id="message" name="message" placeholder="Your Message" rows={5} />
                  {state?.errors?.message && <p className="text-sm text-destructive">{state.errors.message}</p>}
               </div>
               <SubmitButton />
