@@ -37,7 +37,7 @@ const projects = [
     image: PlaceHolderImages.find((img) => img.id === "weather-app"),
     tags: ["Web", "API"],
     github: "https://github.com/HelpingCoder7/my",
-    live: "https://helpingcoder7.github.io/my/weather.com/",
+    live: "https://helpingcoder7.github.io/myweather.com/",
   },
 ];
 

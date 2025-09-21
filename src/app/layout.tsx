@@ -24,26 +24,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    const position = window.scrollY;
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    // Ensure we don't divide by zero
-    const scrollPercentage = scrollHeight > 0 ? (position / scrollHeight) * 100 : 0;
-    setScrollPosition(scrollPercentage);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className="!scroll-smooth dark">
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
@@ -52,8 +35,7 @@ export default function RootLayout({
         )}
       >
         <div 
-          className="flex min-h-screen flex-col scroll-gradient"
-          style={{ backgroundPosition: `50% ${scrollPosition}%` }}
+          className="flex min-h-screen flex-col"
         >
           {children}
         </div>
