@@ -10,7 +10,7 @@ import { AnimateOnScroll } from '@/components/animate-on-scroll';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-background/80 backdrop-blur-sm">
       <Header />
       <main className="flex-1">
         <Hero />
