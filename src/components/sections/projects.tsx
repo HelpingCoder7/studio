@@ -54,89 +54,86 @@ export function Projects() {
             Here are some of the projects I&apos;m proud of.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-2 md:hidden">
-          {/* Mobile view with overlapping cards */}
-           <div className="relative h-[calc(4*12rem+250px)]">
-             {projects.map((project, index) => (
-                <div
+
+        {/* Mobile view with overlapping cards */}
+        <div className="mt-12 grid gap-6 md:hidden">
+          <div className="relative h-[calc(4*12rem+250px)]">
+            {projects.map((project, index) => (
+              <div
                 key={project.title}
                 className="sticky w-full"
                 style={{ top: `calc(6rem + ${index * 3}rem)` }}
               >
-                <Card
-                  className={cn(
-                    "overflow-hidden transition-all duration-300 w-full",
-                     "bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg"
+                <Card className="overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg">
+                  {project.image && (
+                    <div className="aspect-video overflow-hidden">
+                      <Image
+                        src={project.image.imageUrl}
+                        alt={project.title}
+                        width={600}
+                        height={400}
+                        className="object-cover"
+                        data-ai-hint={project.image.imageHint}
+                      />
+                    </div>
                   )}
-                >
-              {project.image && (
-                <div className="aspect-video overflow-hidden">
-                    <Image
-                    src={project.image.imageUrl}
-                    alt={project.title}
-                    width={600}
-                    height={400}
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={project.image.imageHint}
-                    />
-                </div>
-              )}
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <div className="flex flex-wrap gap-2 pt-2">
-                    {project.tags.map(tag => (
+                  <CardHeader>
+                    <CardTitle>{project.title}</CardTitle>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {project.tags.map(tag => (
                         <Badge key={tag} variant="secondary">{tag}</Badge>
-                    ))}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-foreground/80">{project.description}</p>
-              </CardContent>
-              <CardFooter className="gap-2">
-                {project.github && (
-                  <Button asChild variant="outline" className="flex-1">
-                    <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-5 w-5 text-accent" />
-                        GitHub
-                    </Link>
-                  </Button>
-                )}
-                {project.live && (
-                  <Button asChild className="flex-1">
-                    <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-5 w-5 text-accent" />
-                        Live Demo
-                    </Link>
-                  </Button>
-                )}
-              </CardFooter>
-            </Card>
-                </div>
-             ))}
-           </div>
+                      ))}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-foreground/80">{project.description}</p>
+                  </CardContent>
+                  <CardFooter className="gap-2">
+                    {project.github && (
+                      <Button asChild variant="outline" className="flex-1">
+                        <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-5 w-5 text-accent" />
+                          GitHub
+                        </Link>
+                      </Button>
+                    )}
+                    {project.live && (
+                      <Button asChild className="flex-1">
+                        <Link href={project.live} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-5 w-5 text-accent" />
+                          Live Demo
+                        </Link>
+                      </Button>
+                    )}
+                  </CardFooter>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Desktop view */}
         <div className="mt-12 hidden md:grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-            {/* Desktop view */}
           {projects.map((project) => (
-            <Card key={project.title} className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg">
+            <Card key={project.title} className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg">
               {project.image && (
                 <div className="aspect-video overflow-hidden">
-                    <Image
+                  <Image
                     src={project.image.imageUrl}
                     alt={project.title}
                     width={600}
                     height={400}
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     data-ai-hint={project.image.imageHint}
-                    />
+                  />
                 </div>
               )}
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
                 <div className="flex flex-wrap gap-2 pt-2">
-                    {project.tags.map(tag => (
-                        <Badge key={tag} variant="secondary">{tag}</Badge>
-                    ))}
+                  {project.tags.map(tag => (
+                    <Badge key={tag} variant="secondary">{tag}</Badge>
+                  ))}
                 </div>
               </CardHeader>
               <CardContent>
@@ -146,16 +143,16 @@ export function Projects() {
                 {project.github && (
                   <Button asChild variant="outline" className="flex-1">
                     <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-5 w-5 text-accent" />
-                        GitHub
+                      <Github className="mr-2 h-5 w-5 text-accent" />
+                      GitHub
                     </Link>
                   </Button>
                 )}
                 {project.live && (
                   <Button asChild className="flex-1">
                     <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-5 w-5 text-accent" />
-                        Live Demo
+                      <ExternalLink className="mr-2 h-5 w-5 text-accent" />
+                      Live Demo
                     </Link>
                   </Button>
                 )}
