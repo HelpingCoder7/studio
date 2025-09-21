@@ -69,7 +69,7 @@ export function Projects() {
                 </div>
               )}
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="text-primary">{project.title}</CardTitle>
                 <div className="flex flex-wrap gap-2 pt-2">
                     {project.tags.map(tag => (
                         <Badge key={tag} variant="secondary">{tag}</Badge>

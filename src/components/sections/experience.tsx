@@ -34,7 +34,7 @@ export function Experience() {
                     <Card className={`md:w-5/12 ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'}`}>
                         <CardHeader>
                             <div className="flex items-center justify-between">
-                                <CardTitle>{exp.role}</CardTitle>
+                                <CardTitle className="text-primary">{exp.role}</CardTitle>
                                 <span className="text-sm font-medium text-primary">{exp.period}</span>
                             </div>
                             <CardDescription>{exp.company}</CardDescription>

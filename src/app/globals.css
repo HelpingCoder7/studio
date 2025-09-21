@@ -10,7 +10,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 220 80% 70%;
+    --primary: 158 79% 43%;
     --primary-foreground: 222 47% 11%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
@@ -41,6 +41,9 @@
   }
   html {
     scroll-behavior: smooth;
+  }
+  h2 {
+    @apply text-primary;
   }
 }
 

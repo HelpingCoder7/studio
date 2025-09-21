@@ -15,9 +15,6 @@ export function About() {
           <p className="text-foreground/80">
             {aboutText}
           </p>
-          <div className="flex items-center gap-4">
-            <AIContentRefiner initialText={aboutText} />
-          </div>
         </div>
         <div className="space-y-6">
           <Card className="bg-card/50 backdrop-blur-sm">
@@ -27,7 +24,7 @@ export function About() {
                   <Award className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Best Project Award</h3>
+                  <h3 className="font-semibold text-primary">Best Project Award</h3>
                   <p className="text-sm text-foreground/70">
                     Recognized for excellence and innovation in my college project.
                   </p>
@@ -42,7 +39,7 @@ export function About() {
                   <Zap className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Hackathon Enthusiast</h3>
+                  <h3 className="font-semibold text-primary">Hackathon Enthusiast</h3>
                   <p className="text-sm text-foreground/70">
                     Actively participated in multiple hackathons, honing my rapid development and problem-solving skills.
                   </p>
