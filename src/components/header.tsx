@@ -43,7 +43,7 @@ export function Header() {
     >
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-headline text-lg font-bold">
-          <Code className="h-6 w-6 text-primary" />
+          <Code className="h-6 w-6 text-accent" />
           <span>Sudarshan S.</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -61,7 +61,7 @@ export function Header() {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-accent" />
                 <span className="sr-only">Open navigation menu</span>
               </Button>
             </SheetTrigger>
@@ -69,12 +69,12 @@ export function Header() {
               <div className="flex h-full flex-col p-6">
                 <div className="mb-8 flex items-center justify-between">
                    <Link href="/" className="flex items-center gap-2 font-headline text-lg font-bold" onClick={() => setOpen(false)}>
-                    <Code className="h-6 w-6 text-primary" />
+                    <Code className="h-6 w-6 text-accent" />
                     <span>Sudarshan S.</span>
                   </Link>
                   <SheetClose asChild>
                      <Button variant="ghost" size="icon">
-                        <X className="h-6 w-6" />
+                        <X className="h-6 w-6 text-accent" />
                         <span className="sr-only">Close navigation menu</span>
                       </Button>
                   </SheetClose>

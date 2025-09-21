@@ -83,7 +83,7 @@ export function Projects() {
                 {project.github && (
                   <Button asChild variant="outline" className="flex-1">
                     <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
+                        <Github className="mr-2 h-4 w-4 text-accent" />
                         GitHub
                     </Link>
                   </Button>
@@ -91,7 +91,7 @@ export function Projects() {
                 {project.live && (
                   <Button asChild className="flex-1">
                     <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
+                        <ExternalLink className="mr-2 h-4 w-4 text-accent" />
                         Live Demo
                     </Link>
                   </Button>

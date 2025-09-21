@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Zap } from "lucide-react";
-import { AIContentRefiner } from "@/components/ai-content-refiner";
 
 const aboutText = `A passionate Full Stack Developer with a knack for building elegant and efficient applications. I have experience in hackathons and was awarded the 'Best Project Award' in college for my innovative work. I thrive on solving complex problems and continuously learning new technologies.`;
 
@@ -20,7 +19,7 @@ export function About() {
           <Card className="bg-card/50 backdrop-blur-sm">
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
-                <div className="rounded-md bg-primary/10 p-2 text-primary">
+                <div className="rounded-md bg-accent/10 p-2 text-accent">
                   <Award className="h-6 w-6" />
                 </div>
                 <div>

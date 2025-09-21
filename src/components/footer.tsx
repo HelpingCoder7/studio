@@ -32,7 +32,7 @@ export function Footer() {
             {socialLinks.map((link) => (
               <Button asChild variant="ghost" size="icon" key={link.label}>
                 <Link href={link.href} target="_blank" rel="noopener noreferrer">
-                  <link.icon className="h-5 w-5" />
+                  <link.icon className="h-5 w-5 text-accent" />
                   <span className="sr-only">{link.label}</span>
                 </Link>
               </Button>

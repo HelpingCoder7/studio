@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import React, { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 
 import { submitContactForm } from "@/app/actions";
@@ -10,7 +10,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, Phone } from "lucide-react";
-import React from "react";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -24,7 +23,7 @@ function SubmitButton() {
 export function Contact() {
   const [state, formAction] = useActionState(submitContactForm, null);
   const { toast } = useToast();
-  const formRef = React.useRef<HTMLFormElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     if (state?.message) {
@@ -58,13 +57,13 @@ export function Contact() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-center gap-4">
-              <Mail className="h-5 w-5 text-primary" />
+              <Mail className="h-5 w-5 text-accent" />
               <a href="mailto:sudarshanshrivastava7@gmail.com" className="hover:underline">
                 sudarshanshrivastava7@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-4">
-              <Phone className="h-5 w-5 text-primary" />
+              <Phone className="h-5 w-5 text-accent" />
               <a href="tel:9827763713" className="hover:underline">
                 +91 9827763713
               </a>
