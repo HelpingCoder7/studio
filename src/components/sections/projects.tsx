@@ -54,7 +54,7 @@ export function Projects() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        <div className="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2">
           {projects.map((project) => (
             <div key={project.title} className="gradient-border">
               <Card className="group h-full overflow-hidden transition-all duration-300 bg-card/30 backdrop-blur-lg border-transparent">
