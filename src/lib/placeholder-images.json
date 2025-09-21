@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "headshot",
+      "description": "A professional headshot of Sudarshan Shrivastava.",
+      "imageUrl": "https://picsum.photos/seed/headshot/400/400",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "women-safety",
+      "description": "Screenshot of the Women Safety App.",
+      "imageUrl": "https://picsum.photos/seed/safety/600/400",
+      "imageHint": "mobile app safety"
+    },
+    {
+      "id": "traffic-system",
+      "description": "Screenshot of the Traffic Intelligence Detection System.",
+      "imageUrl": "https://picsum.photos/seed/traffic/600/400",
+      "imageHint": "traffic city"
+    },
+    {
+      "id": "music-app",
+      "description": "Screenshot of the Music App.",
+      "imageUrl": "https://picsum.photos/seed/music/600/400",
+      "imageHint": "music player"
+    },
+    {
+      "id": "weather-app",
+      "description": "Screenshot of the Weather App.",
+      "imageUrl": "https://picsum.photos/seed/weather/600/400",
+      "imageHint": "weather forecast"
+    }
+  ]
 }
