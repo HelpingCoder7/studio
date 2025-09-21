@@ -58,7 +58,7 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button asChild size="lg">
               <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                <Download className="mr-2 h-5 w-5 text-accent" />
+                <Download className="mr-2 h-6 w-6 text-accent" />
                 Download Resume
               </Link>
             </Button>
@@ -69,13 +69,13 @@ export function Hero() {
           <div className="mt-8 flex items-center justify-center gap-4">
             <Button asChild variant="ghost" size="icon">
               <a href="https://github.com/HelpingCoder7" target="_blank" rel="noopener noreferrer">
-                <Github className="h-6 w-6 text-accent" />
+                <Github className="h-7 w-7 text-accent" />
                 <span className="sr-only">GitHub</span>
               </a>
             </Button>
             <Button asChild variant="ghost" size="icon">
               <a href="mailto:sudarshanshrivastava7@gmail.com">
-                <Mail className="h-6 w-6 text-accent" />
+                <Mail className="h-7 w-7 text-accent" />
                 <span className="sr-only">Email</span>
               </a>
             </Button>

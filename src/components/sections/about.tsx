@@ -20,7 +20,7 @@ export function About() {
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
                 <div className="rounded-md bg-accent/10 p-2 text-accent">
-                  <Award className="h-6 w-6" />
+                  <Award className="h-7 w-7" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary">Best Project Award</h3>
@@ -35,7 +35,7 @@ export function About() {
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
                 <div className="rounded-md bg-accent/10 p-2 text-accent">
-                  <Zap className="h-6 w-6" />
+                  <Zap className="h-7 w-7" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary">Hackathon Enthusiast</h3>

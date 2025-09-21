@@ -57,13 +57,13 @@ export function Contact() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-center gap-4">
-              <Mail className="h-5 w-5 text-accent" />
+              <Mail className="h-6 w-6 text-accent" />
               <a href="mailto:sudarshanshrivastava7@gmail.com" className="hover:underline">
                 sudarshanshrivastava7@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-4">
-              <Phone className="h-5 w-5 text-accent" />
+              <Phone className="h-6 w-6 text-accent" />
               <a href="tel:9827763713" className="hover:underline">
                 +91 9827763713
               </a>
