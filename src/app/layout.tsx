@@ -1,8 +1,11 @@
+"use client";
+
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
+import { useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -11,16 +14,34 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-export const metadata: Metadata = {
-  title: 'Sudarshan Shrivastava | Portfolio',
-  description: 'The portfolio of Sudarshan Shrivastava, an Application Developer specializing in full-stack development with Flutter, React, Node.js, and more.',
-};
+// export const metadata: Metadata = {
+//   title: 'Sudarshan Shrivastava | Portfolio',
+//   description: 'The portfolio of Sudarshan Shrivastava, an Application Developer specializing in full-stack development with Flutter, React, Node.js, and more.',
+// };
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    // Ensure we don't divide by zero
+    const scrollPercentage = scrollHeight > 0 ? (position / scrollHeight) * 100 : 0;
+    setScrollPosition(scrollPercentage);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <html lang="en" className="!scroll-smooth">
       <body
@@ -30,7 +51,12 @@ export default function RootLayout({
           spaceGrotesk.variable
         )}
       >
-        {children}
+        <div 
+          className="flex min-h-screen flex-col bg-background/80 backdrop-blur-sm scroll-gradient"
+          style={{ backgroundPosition: `50% ${scrollPosition}%` }}
+        >
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>
