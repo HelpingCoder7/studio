@@ -55,7 +55,7 @@ export function Projects() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {projects.map((project) => (
             <Card key={project.title} className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card/60 backdrop-blur-lg border-border shadow-lg">
               {project.image && (
