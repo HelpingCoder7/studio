@@ -62,3 +62,44 @@
   width: max-content;
   animation: scroll 40s linear infinite;
 }
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.gradient-border {
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: var(--radius);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    hsl(var(--accent)) 0%,
+    #e9de5a 50%,
+    hsl(var(--accent)) 100%
+  );
+  animation: rotate 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.in-view .gradient-border::before {
+    opacity: 1;
+}

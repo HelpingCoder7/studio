@@ -57,49 +57,51 @@ export function Projects() {
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {projects.map((project) => (
-            <Card key={project.title} className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card/60 backdrop-blur-lg border-border shadow-lg">
-              {project.image && (
-                <div className="aspect-video overflow-hidden">
-                  <Image
-                    src={project.image.imageUrl}
-                    alt={project.title}
-                    width={600}
-                    height={400}
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={project.image.imageHint}
-                  />
-                </div>
-              )}
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map(tag => (
-                    <Badge key={tag} variant="secondary">{tag}</Badge>
-                  ))}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-foreground/80">{project.description}</p>
-              </CardContent>
-              <CardFooter className="gap-2">
-                {project.github && (
-                  <Button asChild variant="outline" className="flex-1">
-                    <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-5 w-5 text-accent" />
-                      GitHub
-                    </Link>
-                  </Button>
+            <div key={project.title} className="gradient-border">
+              <Card className="group h-full overflow-hidden transition-all duration-300 bg-card/30 backdrop-blur-lg border-transparent">
+                {project.image && (
+                  <div className="aspect-video overflow-hidden">
+                    <Image
+                      src={project.image.imageUrl}
+                      alt={project.title}
+                      width={600}
+                      height={400}
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={project.image.imageHint}
+                    />
+                  </div>
                 )}
-                {project.live && (
-                  <Button asChild className="flex-1">
-                    <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-5 w-5 text-accent" />
-                      Live Demo
-                    </Link>
-                  </Button>
-                )}
-              </CardFooter>
-            </Card>
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tags.map(tag => (
+                      <Badge key={tag} variant="secondary">{tag}</Badge>
+                    ))}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80">{project.description}</p>
+                </CardContent>
+                <CardFooter className="gap-2">
+                  {project.github && (
+                    <Button asChild variant="outline" className="flex-1">
+                      <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-6 w-6 text-accent" />
+                        GitHub
+                      </Link>
+                    </Button>
+                  )}
+                  {project.live && (
+                    <Button asChild className="flex-1">
+                      <Link href={project.live} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-6 w-6 text-accent" />
+                        Live Demo
+                      </Link>
+                    </Button>
+                  )}
+                </CardFooter>
+              </Card>
+            </div>
           ))}
         </div>
       </div>

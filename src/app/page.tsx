@@ -25,7 +25,7 @@ export default function Home() {
         <AnimateOnScroll id="experience">
           <Experience />
         </AnimateOnScroll>
-        <AnimateOnScroll id="projects">
+        <AnimateOnScroll id="projects" className="in-view">
           <Projects />
         </AnimateOnScroll>
         <AnimateOnScroll id="contact">
