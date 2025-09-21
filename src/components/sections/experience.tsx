@@ -17,7 +17,7 @@ const experiences = [
 export function Experience() {
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6">
-        <div className="flex flex-col items-center text-center mb-12">
+        <div className="flex flex-col items-center text-center mb-10">
             <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
                 Work Experience
             </h2>
@@ -25,10 +25,10 @@ export function Experience() {
                 My professional journey and contributions.
             </p>
         </div>
-        <div className="relative md:pl-8">
+        <div className="relative pl-8 md:pl-0">
              <div className="absolute left-4 top-0 h-full w-0.5 -translate-x-1/2 bg-border md:left-1/2"></div>
             {experiences.map((exp, index) => (
-                <div key={index} className="relative mb-8 pl-12 md:pl-0 md:mb-8">
+                <div key={index} className="relative mb-8 pl-4 md:pl-0">
                     <div className="absolute left-4 top-4 h-4 w-4 -translate-x-1/2 rounded-full bg-primary ring-4 ring-background md:left-1/2"></div>
                     <Card className={`md:w-5/12 ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'}`}>
                         <CardHeader>

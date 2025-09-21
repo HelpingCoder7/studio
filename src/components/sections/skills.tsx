@@ -51,12 +51,12 @@ export function Skills() {
         </div>
         <div 
             ref={scrollerRef}
-            className="scroller mt-12"
+            className="scroller mt-10"
         >
           <div className="scroller__inner flex gap-4">
             {[...skills, ...skills].map((skill, index) => (
-              <Card key={`${skill.name}-${index}`} className="group flex flex-col items-center justify-center p-4 text-center transition-all duration-300 hover:bg-primary/5 hover:-translate-y-1 w-32 h-32 md:w-36 md:h-36 flex-shrink-0">
-                <skill.icon className="h-8 w-8 md:h-10 md:w-10 mb-2 text-accent transition-transform duration-300 group-hover:scale-110" />
+              <Card key={`${skill.name}-${index}`} className="group flex flex-col items-center justify-center p-4 text-center transition-all duration-300 hover:bg-primary/5 hover:-translate-y-1 w-28 h-28 md:w-36 md:h-36 flex-shrink-0">
+                <skill.icon className="h-8 w-8 mb-2 text-accent transition-transform duration-300 group-hover:scale-110" />
                 <p className="text-sm font-medium">{skill.name}</p>
               </Card>
             ))}

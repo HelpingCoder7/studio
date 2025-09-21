@@ -6,7 +6,7 @@ const aboutText = `A passionate Full Stack Developer with a knack for building e
 export function About() {
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6">
-      <div className="grid gap-10 md:grid-cols-2 md:gap-12">
+      <div className="grid gap-8 md:grid-cols-2 md:gap-12">
         <div className="space-y-4">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
             About Me
@@ -15,12 +15,12 @@ export function About() {
             {aboutText}
           </p>
         </div>
-        <div className="space-y-6">
+        <div className="space-y-4">
           <Card className="bg-card/50 backdrop-blur-sm">
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
                 <div className="rounded-md bg-accent/10 p-2 text-accent">
-                  <Award className="h-6 w-6 md:h-7 md:w-7 text-accent" />
+                  <Award className="h-7 w-7 text-accent" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary">Best Project Award</h3>
@@ -35,7 +35,7 @@ export function About() {
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
                 <div className="rounded-md bg-accent/10 p-2 text-accent">
-                  <Zap className="h-6 w-6 md:h-7 md:w-7 text-accent" />
+                  <Zap className="h-7 w-7 text-accent" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary">Hackathon Enthusiast</h3>

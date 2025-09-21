@@ -22,17 +22,17 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-muted py-8">
+    <footer className="bg-muted py-6">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-sm text-muted-foreground">
+        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <p className="text-center sm:text-left text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Sudarshan Shrivastava. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             {socialLinks.map((link) => (
               <Button asChild variant="ghost" size="icon" key={link.label}>
                 <Link href={link.href} target="_blank" rel="noopener noreferrer">
-                  <link.icon className="h-6 w-6 text-accent" />
+                  <link.icon className="h-7 w-7 text-accent" />
                   <span className="sr-only">{link.label}</span>
                 </Link>
               </Button>

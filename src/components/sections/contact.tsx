@@ -38,7 +38,7 @@ export function Contact() {
   
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6">
-      <div className="flex flex-col items-center text-center mb-12">
+      <div className="flex flex-col items-center text-center mb-10">
         <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
           Get In Touch
         </h2>
@@ -47,7 +47,7 @@ export function Contact() {
         </p>
       </div>
 
-      <div className="grid gap-10 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Contact Information</CardTitle>
@@ -55,15 +55,15 @@ export function Contact() {
               Here's how you can reach me directly.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4 text-sm md:text-base">
-            <div className="flex items-center gap-4">
-              <Mail className="h-6 w-6 text-accent" />
+          <CardContent className="space-y-4 text-sm">
+            <div className="flex items-center gap-3">
+              <Mail className="h-7 w-7 text-accent" />
               <a href="mailto:sudarshanshrivastava7@gmail.com" className="hover:underline break-all">
                 sudarshanshrivastava7@gmail.com
               </a>
             </div>
-            <div className="flex items-center gap-4">
-              <Phone className="h-6 w-6 text-accent" />
+            <div className="flex items-center gap-3">
+              <Phone className="h-7 w-7 text-accent" />
               <a href="tel:9827763713" className="hover:underline">
                 +91 9827763713
               </a>
@@ -89,7 +89,7 @@ export function Contact() {
                 {state?.errors?.email && <p className="text-sm text-destructive">{state.errors.email}</p>}
               </div>
               <div className="space-y-1">
-                <Textarea id="message" name="message" placeholder="Your Message" rows={5} />
+                <Textarea id="message" name="message" placeholder="Your Message" rows={4} />
                  {state?.errors?.message && <p className="text-sm text-destructive">{state.errors.message}</p>}
               </div>
               <SubmitButton />
