@@ -60,6 +60,7 @@ export function Projects() {
              <AnimateOnScroll
               key={project.title}
               className="py-0"
+              animation="slide-in-right"
             >
               <Card className="group h-full overflow-hidden transition-all duration-800 bg-card/30 backdrop-blur-lg floating-card glowing-border">
                 {project.image && (
