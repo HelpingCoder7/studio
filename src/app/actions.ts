@@ -25,8 +25,16 @@ export async function submitContactForm(prevState: any, formData: FormData) {
 
   const { name, email, message } = validatedFields.data;
 
+  // Check if email environment variables are set
+  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS || !process.env.MY_EMAIL) {
+      console.error("Email environment variables are not configured in .env file. Cannot send email.");
+      return { 
+        errors: null,
+        message: "The email service is not configured correctly on the server. Please contact the site administrator." 
+      };
+  }
+  
   // Configure Nodemailer
-  // IMPORTANT: You must configure these environment variables in your .env file
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT) || 587,
@@ -52,19 +60,12 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   };
 
   try {
-    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS || !process.env.MY_EMAIL) {
-        console.error("Email environment variables not set. Cannot send email.");
-        // We will still return a success message to the user, but log the error on the server.
-        // In a production app, you'd want more robust error handling/monitoring here.
-         return { message: "Thank you for your message! I will get back to you soon." };
-    }
-      
     await transporter.sendMail(mailOptions);
     console.log("Message sent successfully!");
     
-    return { message: "Thank you for your message! I will get back to you soon." };
+    return { errors: null, message: "Thank you for your message! I will get back to you soon." };
   } catch (e) {
     console.error("Failed to send email", e);
-    return { message: "An unexpected error occurred. Please try again." };
+    return { errors: null, message: "An unexpected error occurred while sending the message. Please try again later." };
   }
 }

@@ -10,7 +10,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 140 80% 40%;
+    --primary: 140 50% 60%;
     --primary-foreground: 222 47% 11%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
@@ -37,13 +37,10 @@
     @apply border-border;
   }
   body {
-    @apply text-foreground bg-background;
+    @apply bg-background text-foreground;
   }
   html {
     scroll-behavior: smooth;
-  }
-  h2 {
-    @apply text-primary;
   }
 }
 
@@ -63,43 +60,41 @@
   animation: scroll 40s linear infinite;
 }
 
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes rotate {
-  to {
-    --angle: 360deg;
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
-.gradient-border {
-  position: relative;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  border-radius: var(--radius);
+.floating-card {
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  z-index: -1;
-  margin: -2px;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--angle),
-    hsl(var(--accent)) 0%,
-    #e9de5a 50%,
-    hsl(var(--accent)) 100%
-  );
-  animation: rotate 4s linear infinite;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+
+@keyframes border-glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 2px hsl(var(--accent)),
+      0 0 2px hsl(var(--accent)),
+      -5px -5px 10px -5px hsla(var(--accent), 0), 
+      5px 5px 10px -5px hsla(var(--accent), 0);
+  }
+  50% {
+    box-shadow: 
+      0 0 2px hsl(var(--accent)),
+      0 0 2px hsl(var(--accent)),
+      -5px -5px 10px -5px hsl(var(--accent)), 
+      5px 5px 10px -5px hsl(var(--accent));
+  }
 }
 
-.in-view .gradient-border::before {
-    opacity: 1;
+.glowing-border {
+  animation: border-glow 2s infinite ease-in-out;
 }
