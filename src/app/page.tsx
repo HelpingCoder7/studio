@@ -12,9 +12,9 @@ import { AnimateOnScroll } from '@/components/animate-on-scroll';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+    <div className="flex min-h-screen w-full flex-col overflow-x-hidden">
       <Header />
-      <main className="flex-1 flex flex-col gap-y-12 sm:gap-y-16 md:gap-y-24 px-4 sm:px-6 lg:px-8">
+      <main className="flex flex-1 flex-col gap-y-12 px-4 sm:px-6 md:gap-y-24 lg:px-8">
         <Hero />
         <AnimateOnScroll id="about">
           <About />
@@ -25,9 +25,9 @@ export default function Home() {
         <AnimateOnScroll id="experience">
           <Experience />
         </AnimateOnScroll>
-        <AnimateOnScroll id="projects">
+        <div id="projects" className="py-16 md:py-24">
           <Projects />
-        </AnimateOnScroll>
+        </div>
         <AnimateOnScroll id="contact">
           <Contact />
         </AnimateOnScroll>

@@ -10,7 +10,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 140 80% 40%;
+    --primary: 330 80% 70%;
     --primary-foreground: 222 47% 11%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
@@ -37,13 +37,16 @@
     @apply border-border;
   }
   body {
-    @apply text-foreground bg-background;
+    @apply bg-background text-foreground;
   }
   html {
     scroll-behavior: smooth;
   }
   h2 {
-    @apply text-primary;
+    @apply text-green-400;
+  }
+  svg {
+    @apply text-pink-500;
   }
 }
 
@@ -82,7 +85,7 @@
   border-radius: var(--radius);
 }
 
-.gradient-border::before {
+.gradient-border.in-view::before {
   content: '';
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
@@ -96,10 +99,6 @@
     hsl(var(--accent)) 100%
   );
   animation: rotate 4s linear infinite;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.5s ease-in-out;
-}
-
-.in-view .gradient-border::before {
-    opacity: 1;
 }
