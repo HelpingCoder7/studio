@@ -25,7 +25,7 @@ export default function Home() {
         <AnimateOnScroll id="experience">
           <Experience />
         </AnimateOnScroll>
-        <div id="projects" className="py-16 md:py-24">
+        <div id="projects">
           <Projects />
         </div>
         <AnimateOnScroll id="contact">

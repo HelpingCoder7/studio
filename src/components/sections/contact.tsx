@@ -15,7 +15,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
   return (
     <Button type="submit" disabled={pending} className="w-full sm:w-auto">
-      {pending ? "Sending..." : "Service under development"}
+      {pending ? "Sending..." : "Send Message"}
     </Button>
   );
 }
