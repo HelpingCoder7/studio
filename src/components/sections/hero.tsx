@@ -40,7 +40,7 @@ export function Hero() {
         <div className="flex flex-col items-center text-center">
           <Avatar className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 border-4 border-primary/50 mb-4">
             <AvatarImage
-              src={headshot?.imageUrl}
+              src='/profile.jpg'
               alt="Sudarshan Shrivastava"
               data-ai-hint={headshot?.imageHint}
             />
