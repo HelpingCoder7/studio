@@ -44,7 +44,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-headline text-lg font-bold">
           <Code className="h-7 w-7 text-accent" />
-          <span>Sudarshan S.</span>
+          <span>Sudarshan Shrivastava</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
