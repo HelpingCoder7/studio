@@ -61,7 +61,7 @@ export function Projects() {
               key={project.title}
               className="py-0"
             >
-              <Card className="group h-full overflow-hidden transition-all duration-300 bg-card/30 backdrop-blur-lg floating-card glowing-border">
+              <Card className="group h-full overflow-hidden transition-all duration-800 bg-card/30 backdrop-blur-lg floating-card glowing-border">
                 {project.image && (
                   <div className="aspect-video overflow-hidden">
                     <Image
@@ -69,7 +69,7 @@ export function Projects() {
                       alt={project.title}
                       width={600}
                       height={400}
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover transition-transform duration-800 group-hover:scale-105"
                       data-ai-hint={project.image.imageHint}
                     />
                   </div>
