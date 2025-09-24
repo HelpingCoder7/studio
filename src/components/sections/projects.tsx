@@ -15,7 +15,7 @@ const projects = [
     tags: ["Flutter", "Mobile"],
     github: "https://github.com/HelpingCoder7/Women-safety-app-frontend",
     live: null,
-    apk: "/app-release.apk",
+    apk: "/apprelease.apk",
   },
   {
     title: "Traffic Intelligence Detection System",
