@@ -48,7 +48,7 @@ export function Projects() {
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex flex-col items-center text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
-            Featured Projects
+            Projects
           </h2>
           <p className="mt-4 max-w-2xl text-base text-foreground/80 md:text-lg">
             Here are some of the projects I&apos;m proud of.
