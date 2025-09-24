@@ -4,7 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Download } from "lucide-react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
 const projects = [
@@ -15,6 +15,7 @@ const projects = [
     tags: ["Flutter", "Mobile"],
     github: "https://github.com/HelpingCoder7/Women-safety-app-frontend",
     live: null,
+    apk: "/app-release.apk",
   },
   {
     title: "Traffic Intelligence Detection System",
@@ -23,6 +24,7 @@ const projects = [
     tags: ["Python", "Computer Vision"],
     github: "https://github.com/HelpingCoder7/Traffic-Intelligence-Detection-System",
     live: null,
+    apk: null,
   },
   {
     title: "Music App",
@@ -31,6 +33,7 @@ const projects = [
     tags: ["Flutter", "UI/UX"],
     github: "https://github.com/HelpingCoder7",
     live: null,
+    apk: null,
   },
   {
     title: "Weather App",
@@ -39,6 +42,7 @@ const projects = [
     tags: ["Web", "API"],
     github: "https://github.com/HelpingCoder7/my",
     live: "https://helpingcoder7.github.io/myweather.com/",
+    apk: null,
   },
 ];
 
@@ -100,6 +104,14 @@ export function Projects() {
                       <Link href={project.live} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2" />
                         Live Demo
+                      </Link>
+                    </Button>
+                  )}
+                  {project.apk && (
+                    <Button asChild className="w-full flex-1 sm:w-auto">
+                      <Link href={project.apk} target="_blank" rel="noopener noreferrer" download>
+                        <Download className="mr-2" />
+                        Download App
                       </Link>
                     </Button>
                   )}
